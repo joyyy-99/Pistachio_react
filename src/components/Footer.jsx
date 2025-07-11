@@ -58,7 +58,7 @@ const Footer = () => {
           <h4 className="font-semibold mb-2">Location</h4>
           <div className="w-full h-32 rounded overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.333838421864!2d36.79093395!3d-1.28638905!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172828b8131%3A0x6b7b2b6c1e2b2e8d!2sNairobi!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske" // Example embed URL for Nairobi
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.82664530064!2d36.78229861475459!3d-1.2777174990666904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10b7b1b3b1b1%3A0x6d8f1e5a7b7e5a7b!2s14%20Riversdale%20Dr%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
               className="w-full h-full border-0"
               allowFullScreen=""
               loading="lazy"
