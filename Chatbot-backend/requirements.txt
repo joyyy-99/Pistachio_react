@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+langchain
+langchain-huggingface
+langchain-pinecone
+sentence-transformers
+ctransformers==0.2.5
+
+-e .

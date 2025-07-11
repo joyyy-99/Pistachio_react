@@ -1,0 +1,15 @@
+setup.py
+Pistachio_restaurant.egg-info/PKG-INFO
+Pistachio_restaurant.egg-info/SOURCES.txt
+Pistachio_restaurant.egg-info/dependency_links.txt
+Pistachio_restaurant.egg-info/top_level.txt
+app/__init__.py
+app/main.py
+app/api/__init__.py
+app/core/__init__.py
+app/core/config.py
+app/db/__init__.py
+app/db/pinecone.py
+app/utils/__init__.py
+app/utils/helper.py
+app/utils/prompts.py
