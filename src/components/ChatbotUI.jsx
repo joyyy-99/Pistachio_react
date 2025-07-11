@@ -1,10 +1,7 @@
-import React, { useState } from 'react'; // Import useState if you plan to manage input/messages
+import React, { useState } from 'react'; 
 import chatbotFloatingIcon from '../assets/icons/chatbot-floating-icon.png';
 
 const ChatbotUI = ({ isChatbotOpen, toggleChatbot }) => {
-  // You might want to manage messages and input value with state later
-  // const [messages, setMessages] = useState([]);
-  // const [inputValue, setInputValue] = useState('');
 
   return (
     <div
@@ -73,9 +70,7 @@ const ChatbotUI = ({ isChatbotOpen, toggleChatbot }) => {
             id="chatbot-input"
             placeholder="Ask me anything about Pistachio..."
             className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-500 rounded-full bg-white dark:bg-gray-600 text-dark-font dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-pistachio focus:border-pistachio text-sm"
-            // You'd add value and onChange props here for a functional input
-            // value={inputValue}
-            // onChange={(e) => setInputValue(e.target.value)}
+    
           />
           <button id="send-message" className="bg-pistachio hover:bg-pistachio/90 text-white p-2 rounded-full transition-colors">
             {/* SVG for send icon */}
