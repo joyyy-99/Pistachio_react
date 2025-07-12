@@ -4,11 +4,15 @@ import Hero from './components/Hero';
 import MenuTaste from './components/MenuTaste';
 import OurStory from './components/OurStory';
 import SignatureDishes from './components/SignatureDishes';
+import Reservation from './components/Reservation'
+import Review from './components/Reviews'
 
 
 import ChatbotToggle from './components/ChatbotToggle';
 import ChatbotUI from './components/ChatbotUI';
 import Footer from './components/Footer';
+import Feedback from './components/Feedback';
+import Reviews from './components/Reviews';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -59,9 +63,11 @@ function App() {
       />
       <Hero />
       <MenuTaste />
+      <Reservation />
       <OurStory />
       <SignatureDishes />
-      
+      <Reviews />
+      <Feedback />
       <ChatbotToggle toggleChatbot={toggleChatbot} />
       <ChatbotUI isChatbotOpen={isChatbotOpen} toggleChatbot={toggleChatbot} />
       <Footer />
