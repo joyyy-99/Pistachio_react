@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useState} from "react"
 import {nanoid} from "nanoid"
 import reserveIcon from "../assets/icons/reservation-icon.png"
 import dropdownIcon from "../assets/icons/dropdown-icon.png"

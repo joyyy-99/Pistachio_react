@@ -1,10 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from "react"
 import logoImage from '../assets/images/logo-image.png';
 import locationPinIcon from '../assets/icons/location-pin-footer.png';
 import contactIcon from '../assets/icons/contact-icon-footer.png';
 import emailIcon from '../assets/icons/email-icon-footer.png';
 
 const Footer = () => {
+  const [open, setOpen] = useState(true);
+
+  useEffect(() => {
+    const now = new Date();
+    const hours = now.getHours(); 
+    const day = now.getDay();     
+
+    if (day >= 0 && day <= 4) {  
+      setOpen(hours >= 11 && hours <= 22);
+    } else {
+      setOpen(hours >= 12 && hours <= 23);
+    }
+  }, []);
+  const styles = {
+    color: open ? "pistachio" : "red"
+  }
   return (
     <footer className="bg-brand-light dark:bg-feedback-dark text-dark-font dark:text-gray-300">
       {/* Top row: 5 columns */}
@@ -46,7 +62,11 @@ const Footer = () => {
 
         {/* Opening Hours */}
         <div>
-          <h4 className="font-semibold mb-2">Opening Hours</h4>
+          <h4 className="font-semibold mb-2">
+            <div>
+              <h2 style = {styles}>{open ? 'We are OPEN!' : 'Sorry, we are CLOSED.'}</h2>
+            </div>
+          </h4>
           <ul className="space-y-1 text-sm">
             <li>Mon–Fri: 11:00 AM – 10:00 PM</li>
             <li>Sat–Sun: 12:00 PM – 11:00 PM</li>
