@@ -5,7 +5,7 @@ import darkModeIcon from '../assets/icons/dark-mode-icon.png';
 import lightModeIcon from '../assets/icons/light-mode-icon.png'; // Assuming you have a light mode icon
 import hamburgerIcon from '../assets/icons/hamburger-icon-menu.png';
 
-const Navbar = ({ isMobileMenuOpen, toggleMobileMenu, toggleTheme, isDarkMode }) => {
+export default function Navbar(props){
   return (
     <nav className="fixed inset-x-0 top-0 z-50 bg-brand-light dark:bg-navbar-dark shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-4 py-2">
@@ -35,36 +35,35 @@ const Navbar = ({ isMobileMenuOpen, toggleMobileMenu, toggleTheme, isDarkMode })
         </div>
 
         <div className="md:flex items-center space-x-2 hidden">
-          <button id="theme-toggle" onClick={toggleTheme} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-            <img src={isDarkMode ? lightModeIcon : darkModeIcon} className="h-5 w-5" alt="Toggle theme"/>
+          <button id="theme-toggle" onClick={props.toggleTheme} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            <img src={props.isDarkMode ? lightModeIcon : darkModeIcon} className="h-5 w-5" alt="Toggle theme"/>
           </button>
         </div>
 
         {/* Mobile theme + menu button */}
         <div className="md:hidden flex items-center space-x-2">
-          <button id="theme-toggle-mobile" onClick={toggleTheme} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">
-            <img src={isDarkMode ? lightModeIcon : darkModeIcon} className="h-5 w-5" alt="Toggle theme"/>
+          <button id="theme-toggle-mobile" onClick={props.toggleTheme} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+            <img src={props.isDarkMode ? lightModeIcon : darkModeIcon} className="h-5 w-5" alt="Toggle theme"/>
           </button>
-          <button id="mobile-menu-button" onClick={toggleMobileMenu} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+          <button id="mobile-menu-button" onClick={props.toggleMobileMenu} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition">
             <img src={hamburgerIcon} className="h-6 w-6" alt="Open menu"/>
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div id="mobile-menu" className={`${isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-brand-light dark:bg-navbar-dark`}>
+      <div id="mobile-menu" className={`${props.isMobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-brand-light dark:bg-navbar-dark`}>
         <ul className="space-y-2 px-4 py-6 text-dark-font dark:text-white">
-          <li><a href="#home" onClick={toggleMobileMenu} className="block hover:text-pistachio">Home</a></li>
-          <li><a href="#starter" onClick={toggleMobileMenu} className="block hover:text-pistachio">Starters</a></li>
-          <li><a href="#main-courses" onClick={toggleMobileMenu} className="block hover:text-pistachio">Main Courses</a></li>
-          <li><a href="#sides" onClick={toggleMobileMenu} className="block hover:text-pistachio">Sides</a></li>
-          <li><a href="#desserts" onClick={toggleMobileMenu} className="block hover:text-pistachio">Desserts</a></li>
-          <li><a href="#story" onClick={toggleMobileMenu} className="block hover:text-pistachio">Our Story</a></li>
-          <li><a href="#feedback" onClick={toggleMobileMenu} className="block hover:text-pistachio">Feedback</a></li>
+          <li><a href="#home" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Home</a></li>
+          <li><a href="#starter" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Starters</a></li>
+          <li><a href="#main-courses" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Main Courses</a></li>
+          <li><a href="#sides" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Sides</a></li>
+          <li><a href="#desserts" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Desserts</a></li>
+          <li><a href="#story" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Our Story</a></li>
+          <li><a href="#feedback" onClick={props.toggleMobileMenu} className="block hover:text-pistachio">Feedback</a></li>
         </ul>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
