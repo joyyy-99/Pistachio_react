@@ -1,2 +1,26 @@
 .env
 Chatbot-backend/app/Model/llama-2-7b-chat.ggmlv3.q4_0.bin
+# Node.js dependencies
+node_modules/
+.parcel-cache/ # If you use Parcel bundler
+dist/         # Common output directory for built frontend assets (e.g., Vite build output)
+build/        # Another common output directory
+
+# Environment variables
+.env
+.env.*
+!.env.example # If you have an example .env file you want to commit
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files (e.g., VS Code)
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.idea/
+
+# Logs
+*.log
+logs/
