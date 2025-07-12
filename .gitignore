@@ -1,2 +1,8 @@
 .env
 Chatbot-backend/app/Model/llama-2-7b-chat.ggmlv3.q4_0.bin
+node_modules/
+dist/
+.vite/
+.tailwind/
+.env
+.vscode/
