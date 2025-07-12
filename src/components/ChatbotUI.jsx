@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const backend_url = 'http://127.0.0.1:8000/chat';
+const backend_url = import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000/chat';
 
 const Chatbot = () => {
   // State for chatbot UI visibility
