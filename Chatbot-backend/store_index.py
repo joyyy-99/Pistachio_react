@@ -4,7 +4,7 @@ from pinecone import Pinecone as PineconeClient, ServerlessSpec
 from langchain_pinecone import Pinecone
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# Import helper functions from the new utils directory
+# Import helper functions
 from app.utils.helper import load_pdf, text_split, download_hugging_face_embeddings
 
 load_dotenv()

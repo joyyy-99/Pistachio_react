@@ -11,6 +11,7 @@ class Settings:
     """
 
     PINECONE_API_KEY: str = os.getenv("PINECONE_API_KEY", "")
+    print(PINECONE_API_KEY)
     PINECONE_REGION: str = os.getenv(
         "PINECONE_REGION", "us-east-2"
     )  # Default to us-east-2 if not set
@@ -19,7 +20,7 @@ class Settings:
     )  # Default to aws if not set
     INDEX_NAME: str = os.getenv("INDEX_NAME", "pistachio")
     LLM_MODEL_PATH: str = os.getenv(
-        "LLM_MODEL_PATH", "Model/llama-2-7b-chat.ggmlv3.q4_0.bin"
+        "LLM_MODEL_PATH", "C:/Users/nutne/Downloads/llama-2-7b-chat.ggmlv3.q4_0.bin"
     )
 
     # Frontend URL for CORS
