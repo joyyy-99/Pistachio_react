@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const backend_url = import.meta.env.VITE_BACKEND_URL || 'http://127.0.0.1:8000/chat';
+const backend_url = import.meta.env.VITE_BACKEND_URL || 'https://pistachio-chatbot-app.onrender.com/chat';
 
 const Chatbot = () => {
   // State for chatbot UI visibility
@@ -108,7 +108,7 @@ const Chatbot = () => {
         className="fixed bottom-6 right-6 z-50 bg-pistachio hover:bg-pistachio/90 p-4 rounded-full shadow-lg cursor-pointer transition-all duration-300"
         onClick={() => setIsOpen(!isOpen)}
       >
-      
+
         <img src="/assets/icons/chatbot-floating-icon.png" className="w-6 h-6" alt="Chatbot Icon" />
       </div>
 
