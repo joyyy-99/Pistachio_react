@@ -17,13 +17,25 @@ If you are developing a production application, we recommend using TypeScript wi
 A smart AI assistant for the Pistachio Restaurant, designed to answer customer queries about the menu, opening hours, reservations, and more. This chatbot leverages Retrieval Augmented Generation (RAG) to provide accurate and contextual responses, combining the power of OpenAI's Large Language Models with a Pinecone vector database for efficient information retrieval.
 
 ## Features
-Intelligent Q&A: Answers questions about the restaurant's menu, dishes, ingredients, opening hours, contact details, and story.
-Contextual Conversations: Maintains conversation history to provide relevant follow-up responses.
-Retrieval Augmented Generation (RAG): Uses a vector database (Pinecone) to retrieve relevant information from a knowledge base before generating responses with an LLM.
-OpenAI Integration: Utilizes OpenAI's powerful GPT-3.5 Turbo for natural language understanding and generation.
-Hugging Face Integration: Employs a Hugging Face sentence-transformers model for efficient text embedding.
-Modern Web Stack: Built with a FastAPI backend (Python) and a React frontend (JavaScript/Vite).
-Dockerized Backend: The backend is containerized for consistent and reliable deployment.
+### Intelligent Q&A:
+ Answers questions about the restaurant's menu, dishes, ingredients, opening hours, contact details, and story.
+
+### Contextual Conversations:
+ Maintains conversation history to provide relevant follow-up responses.
+
+### Retrieval Augmented Generation (RAG):
+ Uses a vector database (Pinecone) to retrieve relevant information from a knowledge base before generating responses with an LLM.
+
+### OpenAI Integration:
+ Utilizes OpenAI's powerful GPT-3.5 Turbo for natural language understanding and generation.
+
+### Hugging Face Integration: Employs a Hugging Face sentence-transformers model for efficient text embedding.
+
+### Modern Web Stack:
+ Built with a FastAPI backend (Python) and a React frontend (JavaScript/Vite).
+
+### Dockerized Backend:
+ The backend is containerized for consistent and reliable deployment.
 
 ## Architecture
 The application follows a client-server architecture with several key components:
@@ -197,8 +209,11 @@ Publish Directory: dist
 Once both services are deployed and have public URLs:
 
 Get Backend URL: From your pistachio-chatbot-backend service on Render, copy its public URL (e.g., https://pistachio-chatbot-backend-xxxx.onrender.com).
+
 Update Frontend VITE_BACKEND_URL: Go to pistachio-chatbot-frontend settings on Render, edit VITE_BACKEND_URL, and set it to your backend's URL including the endpoint: https://pistachio-chatbot-backend-xxxx.onrender.com/chat. This will trigger a redeploy of your frontend.
+
 Get Frontend URL: From your pistachio-chatbot-frontend service, copy its public URL (e.g., https://pistachio-chatbot-frontend-yyyy.onrender.com).
+
 Update Backend FRONTEND_URL (CORS): Go to pistachio-chatbot-backend settings on Render, edit FRONTEND_URL, and set it to your frontend's URL: https://pistachio-chatbot-frontend-yyyy.onrender.com. This will trigger a redeploy of your backend.
 
 ## 4. Final Testing
@@ -221,7 +236,7 @@ Interact with the chatbot by typing your questions in the input field or double 
  Ensure VITE_BACKEND_URL in your frontend's Render environment variables points to the correct, full URL of your deployed backend's /chat endpoint.
 
 ## Screenshots of bot at work
-## #Chatbot UI
+### Chatbot UI
 ![alt text](<WhatsApp Image 2025-07-12 at 18.43.09_515974dd.jpg>)
 
 ![alt text](<WhatsApp Image 2025-07-12 at 18.43.09_d2fc4a0a.jpg>)
