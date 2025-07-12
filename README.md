@@ -228,3 +228,12 @@ CORS issues: Double-check that FRONTEND_URL in your backend's Render environment
 Backend not responding: Check the logs of your backend service on Render for any errors or crashes during startup or request processing.
 
 Frontend not connecting: Ensure VITE_BACKEND_URL in your frontend's Render environment variables points to the correct, full URL of your deployed backend's /chat endpoint.
+
+##Screenshots of bot at work
+Chatbot UI
+![alt text](<WhatsApp Image 2025-07-12 at 18.43.09_515974dd.jpg>)
+
+![alt text](<WhatsApp Image 2025-07-12 at 18.43.09_d2fc4a0a.jpg>)
+
+Render logs
+![alt text](<Pistachio-Chatbot-App ・ Web Service ・ Render Dashboard - Google Chrome 12_07_2025 17_08_06.png>)
