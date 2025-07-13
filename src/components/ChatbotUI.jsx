@@ -109,7 +109,7 @@ const Chatbot = () => {
         onClick={() => setIsOpen(!isOpen)}
       >
 
-        <img src="/assets/icons/chatbot-floating-icon.png" className="w-6 h-6" alt="Chatbot Icon" />
+        <img src="src/assets/icons/chatbot-icon.png" className="w-6 h-6" alt="Chatbot Icon" />
       </div>
 
       {/* CHATBOT UI */}
@@ -120,7 +120,7 @@ const Chatbot = () => {
         {/* Header */}
         <div className="bg-pistachio text-white p-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <img src="/assets/icons/chatbot-floating-icon.png" className="w-8 h-8" alt="Bot Icon" />
+            <img src="src/assets/icons/chatbot-floating-icon.png" className="w-8 h-8" alt="Bot Icon" />
             <div>
               <h3 className="font-semibold text-sm">Pistachio Assistant</h3>
               <p className="text-xs opacity-90">Ask me anything!</p>
@@ -134,7 +134,7 @@ const Chatbot = () => {
           {messages.map((msg, index) => (
             <div key={index} className={`flex items-start space-x-2 max-w-[85%] ${msg.sender === 'user' ? 'justify-end ml-auto user-message' : 'bot-message'}`}>
               {msg.sender === 'bot' && (
-                <img src="/assets/icons/chatbot-floating-icon.png" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/24x24/90EE90/FFFFFF?text=B'; }} className="w-6 h-6 mt-1 rounded-full" alt="Bot" />
+                <img src="src/assets/icons/chatbot-floating-icon.png" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/24x24/90EE90/FFFFFF?text=B'; }} className="w-6 h-6 mt-1 rounded-full" alt="Bot" />
               )}
               <div className={`${msg.sender === 'user' ? 'bg-pistachio text-white' : 'bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200'} rounded-lg p-3 shadow-md message-bubble`}>
                 <p className="text-sm break-words">{msg.text}</p>
