@@ -12,11 +12,11 @@ export default function Reservation(){
   const today = new Date();
   const todayYear = today.getFullYear();
 
-  if (!reservation.fullName || !reservation.email || !reservation.date || !reservation.reservationComments) {
+  if (!reservation.fullName || !reservation.email || !reservation.date || !reservation.reservationComments|| !reservation.numberOfGuests) {
     setError("Please fill in missing fields");
   } else {
     const selectedDate = new Date(reservation.date);
-    if (selectedDate.getFullYear() > todayYear + 1 || selectedDate.getFullYear() < todayYear + 1) {
+    if (selectedDate.getFullYear() > todayYear + 1 || selectedDate.getFullYear() < todayYear - 1) {
       setError(`Cannot make a reservation for ${reservation.date}`);
     } else {
       localStorage.setItem(`reservation-details ${reservation.id}`, JSON.stringify(reservation));
