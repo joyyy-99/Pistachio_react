@@ -7,7 +7,7 @@ import dessertImg from '../assets/images/Menu-preview/dessert.jpg';
 
 const MenuTaste = () => {
   return (
-    <section id="menu-taste" className="py-16 bg-white dark:bg-navbar-dark">
+    <section id="menu-taste" className="py-16 bg-white dark:bg-[#333]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-8 text-center">

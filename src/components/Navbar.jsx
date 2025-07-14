@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logoImage from '../assets/images/logo-image.png';
 import dropdownIcon from '../assets/icons/dropdown-icon.png';
 import darkModeIcon from '../assets/icons/dark-mode-icon.png';
@@ -6,8 +6,9 @@ import lightModeIcon from '../assets/icons/light-mode-icon.png'; // Assuming you
 import hamburgerIcon from '../assets/icons/hamburger-icon-menu.png';
 
 export default function Navbar(props){
+
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 bg-brand-light dark:bg-navbar-dark shadow-md">
+    <nav className="sticky inset-x-0 top-0 z-50 bg-brand-light dark:bg-navbar-dark shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-4 py-2">
         {/* Logo */}
         <a href="#home" className="flex items-center">

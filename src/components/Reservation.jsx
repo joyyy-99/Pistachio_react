@@ -59,17 +59,15 @@ export default function Reservation(){
     }
 
   }
-  function getReservation(){
-    return(
-       <div>
+const getReservation = 
+       (<div>
           <p>Full name: <span>{reservation.fullName}</span></p>
           <p>Email: <span>{reservation.email}</span></p>
           <p>Date: <span>{reservation.date}</span></p>
           <p>Number of guests: <span>{reservation.numberOfGuests}</span></p>
           <p>Reservation comments: <span>{reservation.reservationComments}</span></p>
-       </div>
-    )
-  }
+       </div>)
+  
   
   
   return (
@@ -157,7 +155,7 @@ export default function Reservation(){
 
           {isSubmitted && (
             <div>
-              <div className="bg-pistachio p-4 mt-4 rounded shadow-md text-center text-white text-3xl">
+              <div className="mb-4 bg-pistachio p-4 mt-4 rounded shadow-md text-center text-white text-3xl">
                 Thank you for your reservation!
               </div>
               {getReservation}

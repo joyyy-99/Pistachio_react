@@ -7,7 +7,7 @@ import experienceIcon from '../assets/icons/experience-icon.png';
 
 const OurStory = () => {
   return (
-    <section id="story" className="py-16 bg-brand-light dark:bg-feedback-dark">
+    <section id="story" className="py-16 bg-brand-light dark:bg-[#333]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mb-8 flex items-center space-x-2">

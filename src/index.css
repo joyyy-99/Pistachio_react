@@ -1,27 +1,11 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Your custom colors */
-  --color-pistachio: #93BFA3;
-  --color-light-gray-bg: #f9fafb;
-  --color-dark-font: #1f2937;
-  --color-medium-gray-text: #6b7280;
-  --color-dark-bg: #121212;
-  --color-navbar-dark: #2E2E2E;
-  --color-input-dark: #D9D9D9;
-  --color-feedback-dark: #6D6D6D;
-  --color-brand-light: #FAF9F6;
-
-  /* Your custom fonts, if you want them defined this way in v4 */
-  --font-sans: "Playfair Display", "serif";
-  --font-serif: "Playfair Display", "serif"; /* Often default 'serif' handles Playfair Display correctly */
-
-  /* You can also define other things here like breakpoints, spacing, etc. */
-  /* For example, for a custom breakpoint if needed: */
-  /* --breakpoint-md: 768px; */
+body {
+  @apply font-serif;
 }
 
-/* Any other global styles not defined via @theme should go here */
 html {
   scroll-behavior: smooth;
 }
