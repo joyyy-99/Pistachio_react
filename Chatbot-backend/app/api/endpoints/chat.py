@@ -5,7 +5,7 @@ import os
 from typing import Dict
 
 from langchain.prompts import PromptTemplate
-from langchain_community.llms import CTransformers
+from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.memory import ConversationBufferMemory
 
@@ -25,15 +25,28 @@ except Exception as e:
 
 # Initialize the LLM
 try:
-    llm = CTransformers(
-        model=settings.LLM_MODEL_PATH,
-        model_type="llama",
-        config={"max_new_tokens": 512, "temperature": 0.8},
+    llm = ChatOpenAI(
+        openai_api_key=settings.OPENAI_API_KEY,
+        model_name="gpt-3.5-turbo",
+        temperature=0.8,
+        max_tokens=512,
     )
-    print(f"Successfully loaded LLM model from: {settings.LLM_MODEL_PATH}")
+    
 except Exception as e:
-    print(f"Failed to load LLM model at startup: {e}")
+    print(f"Failed to initialize OPENAI LLM at startup: {e}")
     llm = None  # Set to None if initialization fails
+    raise HTTPException(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        detail=f"OpenAI API Key not configured. Error: {e}",
+    )
+except Exception as e:
+    print(f"Failed to initialize OpenAI LLM at startup: {e}")
+    llm = None
+    raise HTTPException(
+        status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        detail=f"An error occurred while initializing the OpenAI LLM. Error: {e}",
+    )
+
 
 # Define the prompt template for the RAG chain
 PROMPT = PromptTemplate(

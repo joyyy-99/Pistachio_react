@@ -7,7 +7,8 @@ langchain-community
 langchain-huggingface
 langchain-pinecone
 sentence-transformers
-ctransformers==0.2.5
+#ctransformers==0.2.5
 pymupdf
-
+openai
+langchain-openai
 -e .

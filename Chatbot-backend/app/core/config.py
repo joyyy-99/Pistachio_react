@@ -19,9 +19,9 @@ class Settings:
         "PINECONE_CLOUD", "aws"
     )  # Default to aws if not set
     INDEX_NAME: str = os.getenv("INDEX_NAME", "pistachio")
-    LLM_MODEL_PATH: str = os.getenv(
-        "LLM_MODEL_PATH", "C:/Users/nutne/Downloads/llama-2-7b-chat.ggmlv3.q4_0.bin"
-    )
+    # OpenAI API Key
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+    print(OPENAI_API_KEY)
 
     # Frontend URL for CORS
     FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:3000")

@@ -8,10 +8,23 @@ export default function Reservation(){
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   function handleReservation(e) {
-      e.preventDefault();
+  e.preventDefault();
+  const today = new Date();
+  const todayYear = today.getFullYear();
+
+  if (!reservation.fullName || !reservation.email || !reservation.date || !reservation.reservationComments|| !reservation.numberOfGuests) {
+    setError("Please fill in missing fields");
+  } else {
+    const selectedDate = new Date(reservation.date);
+    if (selectedDate.getFullYear() > todayYear + 1 || selectedDate.getFullYear() < todayYear - 1) {
+      setError(`Cannot make a reservation for ${reservation.date}`);
+    } else {
       localStorage.setItem(`reservation-details ${reservation.id}`, JSON.stringify(reservation));
       setIsSubmitted(true);
+    }
+    }
   }
+
 
   const [reservation, setReservation] = useState({
     id: nanoid(),
@@ -47,14 +60,13 @@ export default function Reservation(){
 
   }
   function getReservation(){
-    const ress = reservation
     return(
        <div>
-          <p>Full name: <span>{ress.fullName}</span></p>
-          <p>Email: <span>{ress.email}</span></p>
-          <p>Date: <span>{ress.date}</span></p>
-          <p>Number of guests: <span>{ress.numberOfGuests}</span></p>
-          <p>Reservation comments: <span>{ress.reservationComments}</span></p>
+          <p>Full name: <span>{reservation.fullName}</span></p>
+          <p>Email: <span>{reservation.email}</span></p>
+          <p>Date: <span>{reservation.date}</span></p>
+          <p>Number of guests: <span>{reservation.numberOfGuests}</span></p>
+          <p>Reservation comments: <span>{reservation.reservationComments}</span></p>
        </div>
     )
   }
@@ -94,7 +106,7 @@ export default function Reservation(){
             name="email"
             required
           />
-          {error && <div className="bg-red-400 text-white px-2 py-1 rounded">{error}</div>}
+          
 
           <input
             type="date"
@@ -134,6 +146,7 @@ export default function Reservation(){
             required
           />
          {reservation.reservationComments && <p>Number of characters: {reservation.reservationComments.length}</p>}
+         {error && <div className="bg-red-400 text-white px-2 py-1 rounded">{error}</div>}
 
           <button
             onClick={handleReservation}
