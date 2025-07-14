@@ -2,7 +2,7 @@ import React from 'react';
 import logoImage from '../assets/images/logo-image.png';
 import dropdownIcon from '../assets/icons/dropdown-icon.png';
 import darkModeIcon from '../assets/icons/dark-mode-icon.png';
-import lightModeIcon from '../assets/icons/light-mode-icon.png'; // Assuming you have a light mode icon
+import lightModeIcon from '../assets/icons/light-mode-icon.png'; 
 import hamburgerIcon from '../assets/icons/hamburger-icon-menu.png';
 
 export default function Navbar(props){

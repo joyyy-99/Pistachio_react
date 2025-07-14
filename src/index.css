@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Configure dark mode to use class instead of prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Your custom colors */
   --color-pistachio: #93BFA3;
@@ -11,17 +14,20 @@
   --color-input-dark: #D9D9D9;
   --color-feedback-dark: #6D6D6D;
   --color-brand-light: #FAF9F6;
-
-  /* Your custom fonts, if you want them defined this way in v4 */
+  
+  /* Your custom fonts */
   --font-sans: "Playfair Display", "serif";
-  --font-serif: "Playfair Display", "serif"; /* Often default 'serif' handles Playfair Display correctly */
-
-  /* You can also define other things here like breakpoints, spacing, etc. */
-  /* For example, for a custom breakpoint if needed: */
-  /* --breakpoint-md: 768px; */
+  --font-serif: "Playfair Display", "serif";
 }
 
-/* Any other global styles not defined via @theme should go here */
+/* Global styles */
 html {
   scroll-behavior: smooth;
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 150ms ease-in-out,
+              color 150ms ease-in-out,
+              border-color 150ms ease-in-out;
 }
