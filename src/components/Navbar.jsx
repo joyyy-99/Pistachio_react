@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import logoImage from '../assets/images/logo-image.png';
 import dropdownIcon from '../assets/icons/dropdown-icon.png';
 import darkModeIcon from '../assets/icons/dark-mode-icon.png';
@@ -7,8 +8,21 @@ import hamburgerIcon from '../assets/icons/hamburger-icon-menu.png';
 
 export default function Navbar(props){
 
+  const [sticky, setSticky] = useState(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 200)
+    }
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+    
+  },[])
+
   return (
-    <nav className="sticky inset-x-0 top-0 z-50 bg-brand-light dark:bg-navbar-dark shadow-md">
+    <nav className = {`${sticky ? 'sticky top-0 z-100': ''} inset-x-0 top-0 z-50 bg-brand-light dark:bg-navbar-dark shadow-md`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-4 py-2">
         {/* Logo */}
         <a href="#home" className="flex items-center">
@@ -18,16 +32,16 @@ export default function Navbar(props){
         {/* Desktop menu + theme-toggle */}
         <div className="flex-1 flex justify-center">
           <ul className="hidden md:flex items-center space-x-8 text-dark-font dark:text-white">
-            <li><a href="#home" className="hover:text-pistachio transition">Home</a></li>
+            <li className="hover:text-pistachio transition"><Link to = "/">Home</Link></li>
             <li className="relative group">
               <button className="flex items-center hover:text-pistachio transition">
                 Menu <img src={dropdownIcon} className="ml-1 h-3" alt="⌄"/>
               </button>
-              <ul className="absolute left-0 mt-2 w-44 rounded bg-white dark:bg-navbar-dark shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                <li><a href="#starter" className="block px-4 py-2 hover:text-pistachio">Starters</a></li>
-                <li><a href="#main-courses" className="block px-4 py-2 hover:text-pistachio">Mains</a></li>
-                <li><a href="#sides" className="block px-4 py-2 hover:text-pistachio">Sides</a></li>
-                <li><a href="#desserts" className="block px-4 py-2 hover:text-pistachio">Desserts</a></li>
+              <ul className="absolute left-0 mt-2 w-44 rounded bg-white dark:bg-navbar-dark shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">    
+                <li className="block px-4 py-2 hover:text-pistachio"><Link to = "/MenuPageStarters">Starters</Link></li>
+                <li className="block px-4 py-2 hover:text-pistachio"><Link to = "/MenuPageMains">Mains</Link></li>
+                <li className="block px-4 py-2 hover:text-pistachio"><Link to = "/MenuPageDesserts">Desserts</Link></li>
+                <li className="block px-4 py-2 hover:text-pistachio"><Link to = "/MenuPageSides">Drinks</Link></li>
               </ul>
             </li>
             <li><a href="#story" className="hover:text-pistachio transition">Our Story</a></li>
